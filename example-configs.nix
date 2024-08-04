@@ -1,6 +1,6 @@
 {
   phoenixDev = {
-    elixir.enabled = true;
-    postgres.enabled = true;
+    elixir.enable = true;
+    postgres.enable = true;
   };
 }

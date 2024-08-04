@@ -3,7 +3,7 @@ let cfg = config.stripe-mock;
 in {
   options = {
     stripe-mock = {
-      enabled = lib.mkOption {
+      enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = ''
@@ -18,7 +18,7 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enabled {
+  config = lib.mkIf cfg.enable {
     moduleBuildInputs = [ cfg.package ];
     setup =
       # bash

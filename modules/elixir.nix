@@ -3,7 +3,7 @@ let cfg = config.elixir;
 in {
   options = {
     elixir = {
-      enabled = lib.mkOption {
+      enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description =
@@ -29,7 +29,7 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enabled {
+  config = lib.mkIf cfg.enable {
     moduleBuildInputs = [ cfg.package cfg.erlPackage ]
       ++ lib.optionals cfg.enableFileWatchers
       (lib.optionals pkgs.stdenv.isLinux [
